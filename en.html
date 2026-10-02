@@ -1,94 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Enrik Pashaj | Computer science student</title>
-<meta name="description" content="Portfolio of Enrik Pashaj, third-year computer science student at Université d'Artois, looking for an internship.">
-<link rel="alternate" hreflang="fr" href="index.html">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrik Pashaj | CS Portfolio</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff2a2a'>%23</text></svg>">
+  <meta property="og:title" content="Enrik Pashaj | Computer Science Portfolio">
+  <meta property="og:description" content="Third-year Computer Science student at Université d'Artois — Seeking Internship : Online">
+  <meta property="og:image" content="https://enrik.is-a.dev/assets/dijkstra.png">
+  <meta property="og:url" content="https://enrik.is-a.dev/en.html">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-  <strong>Enrik Pashaj</strong>
-  <a href="index.html" hreflang="fr" lang="fr">Français</a>
-</header>
-<div class="wave" aria-hidden="true"></div>
-<main>
-  <h1>Hey, I'm Enrik.</h1>
-  <p>I'm a third-year computer science student at Université d'Artois, looking for an internship where I can build things that actually work and learn from people who do it every day.</p>
-  <p>I like code that stays readable and projects that stay organized. I also spent several years in retail and delivery, so deadlines, customers and training new people aren't exactly new territory.</p>
-  <p>When I'm not coding, I'm probably at the pool.</p>
-  <div class="buttons">
-    <a class="main" href="assets/Enrik_Pashaj_CV_stage_EN.pdf">View my CV</a>
-    <a href="https://www.linkedin.com/in/ricky-tech-savvy/">LinkedIn</a>
-    <a href="https://github.com/lille-ricky/">GitHub</a>
-  </div>
 
-  <h2>Projects</h2>
-  <h3>Memory Game</h3>
-  <p>A matching game using League of Legends visuals, built in Java with Swing. It follows the MVC pattern, tracks attempts and time, handles card clicks and menu actions (new game, restart, quit, about), and runs from an executable .jar file.</p>
-  <figure><img src="assets/memory-game.png" alt="Memory Game window with a grid of face-down cards, an attempt counter and a timer" width="905" height="658" loading="lazy"></figure>
-  <p><a href="https://github.com/lille-ricky/Memory-Game-">View the code on GitHub</a></p>
-  <h3>Sokoban</h3>
-  <p>The classic box-pushing game, played directly in the terminal: w, a, s and d to move, x to quit, r to restart. I built the engine in Java, including the levels, movement and collision detection.</p>
-  <figure><img src="assets/sokoban.png" alt="Sokoban running in a terminal, showing the level in characters and the move counter" width="1107" height="623" loading="lazy"></figure>
-  <p><a href="https://github.com/lille-ricky/sokoban">View the code on GitHub</a></p>
-  <h3>Shortest path</h3>
-  <p>A university SAE report in Python, written in LaTeX. I compared Dijkstra (binary heap and Fibonacci heap) with Bellman-Ford using real Ilévia bus data from the Lille area. In practice, the simpler binary heap came out ahead most of the time, while Bellman-Ford was much slower. Sometimes the fancy theory doesn't beat the simple solution.</p>
-  <p><a href="https://github.com/lille-ricky/Plus-court-chemin">View the code on GitHub</a></p>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="en.html" class="nav-brand">
+        <span class="status-dot"></span>
+        <span>ENRIK PASHAJ <span class="tag-brand">{ DEV }</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#projects">01.PROJECTS</a></li>
+        <li><a href="#skills">02.SKILLS</a></li>
+        <li><a href="#experience">03.EXPERIENCE</a></li>
+        <li><a href="#education">04.EDUCATION</a></li>
+        <li><a href="#contact">05.CONTACT</a></li>
+        <li><a href="index.html" class="lang-switch">FR ↗</a></li>
+      </ul>
+      <a href="assets/Enrik_Pashaj_CV_stage_EN.pdf" class="btn btn-outline" target="_blank">[ CV PDF ↗ ]</a>
+    </div>
+  </header>
 
-  <h2>Skills</h2>
-  <ul>
-    <li><strong>Languages:</strong> Java (OOP, inheritance, collections), Python, C, JavaScript</li>
-    <li><strong>Web:</strong> HTML, CSS, React</li>
-    <li><strong>Databases:</strong> PostgreSQL (conceptual model, logical model, SQL, joins)</li>
-    <li><strong>Systems:</strong> UNIX and Shell (files, processes), Excel and LibreOffice Calc</li>
-  </ul>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-badge">L3 COMPUTER SCIENCE — UNIVERSITÉ D'ARTOIS</div>
+      <h1 class="hero-title">ENRIK PASHAJ — STUDENT & DEVELOPER.</h1>
+      <p class="hero-subtitle">
+        Third-year computer science undergraduate at Université d'Artois. Looking for an internship where I can build software that works reliably and learn from experienced engineers.
+      </p>
+      
+      <div class="hero-actions">
+        <a href="assets/Enrik_Pashaj_CV_stage_EN.pdf" class="btn btn-primary" target="_blank">→ VIEW MY CV</a>
+        <a href="https://github.com/lille-ricky/" class="btn btn-outline" target="_blank">GITHUB ↗</a>
+        <a href="https://www.linkedin.com/in/ricky-tech-savvy/" class="btn btn-outline" target="_blank">LINKEDIN ↗</a>
+        <a href="https://www.goodreads.com/user/show/195816372?ref=nav_profile_l" class="btn btn-outline" target="_blank">GOODREADS ↗</a>
+      </div>
 
-  <h2>Experience</h2>
-  <h3>Versatile team member, Carrefour City, Faches-Thumesnil</h3>
-  <p class="meta">April 2023 to present</p>
-  <ul>
-    <li>Checkout, restocking and invoice checks</li>
-    <li>Parcel pickup point: receiving and inventorying parcels, checking use-by and best-before dates</li>
-    <li>Training new hires and managing stock orders</li>
-    <li>Bakery: preparation, baking and shelf stocking</li>
-  </ul>
-  <h3>Delivery rider, Just Eat France</h3>
-  <p class="meta">May 2021 to January 2023</p>
-  <ul>
-    <li>Independent deliveries, route planning and keeping to deadlines</li>
-    <li>Team captain from March 2022: onboarding new recruits and being their first point of contact in the field</li>
-    <li>Ran the in-house workshop for bike repairs and maintenance</li>
-  </ul>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">01 // STATUS</div>
+          <div class="metric-value">Seeking Internship : <span class="online-badge">✓ <span class="online-text">Online</span></span></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">02 // LOCATION</div>
+          <div class="metric-value">Lille / Lens, France</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">03 // DEGREE</div>
+          <div class="metric-value">B.Sc. Computer Science (L3)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">04 // OUTSIDE THE CODE</div>
+          <div class="metric-value">Swimming, Cycling, Running, Reading</div>
+        </div>
+      </div>
+    </section>
 
-  <h2>Education</h2>
-  <h3>Bachelor's degree in Computer Science, Université d'Artois, Lens</h3>
-  <p class="meta">Faculté des Sciences Jean Perrin, since September 2024</p>
-  <ul>
-    <li>UNIX: shell scripting, file and process management</li>
-    <li>Object-oriented programming in Java: class hierarchies, inheritance, abstract classes, typed collections</li>
-    <li>Databases with PostgreSQL: ER modeling, logical schema, SQL</li>
-    <li>Web programming: HTML, CSS, JavaScript, React</li>
-    <li>Algorithms and data structures in Python and C</li>
-  </ul>
-  <p>CLES English B2 certification, Université d'Artois, February 2025.</p>
+    <section id="projects">
+      <div class="section-header">
+        <div class="section-number">01 // PROJECTS & SOFTWARE DEVELOPMENT</div>
+        <h2 class="section-title">Academic & Personal Projects</h2>
+      </div>
 
-  <h2>Outside the code</h2>
-  <p>I swim. Long sets teach you to pace yourself, breathe when you need to and keep going when the wall still feels far away. I bring the same habits to projects, and I try not to sprint the first 50.</p>
+      <div class="grid-3">
+        <div class="tech-card">
+          <div>
+            <div class="card-header">
+              <span class="card-tag">{ JAVA / SWING }</span>
+              <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.1]</span>
+            </div>
+            <h3 class="card-title">Memory Game</h3>
+            <p class="card-desc">
+              A matching game using League of Legends visuals, built in Java with Swing. It follows the MVC pattern, tracks attempts and time, handles card clicks and menu actions, and runs from an executable .jar file.
+            </p>
+            <div class="card-media">
+              <img src="assets/memory-game.png" alt="Memory Game preview" onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div>
+            <div class="tech-stack">
+              <span class="tech-item">Java</span>
+              <span class="tech-item">Swing</span>
+              <span class="tech-item">MVC</span>
+              <span class="tech-item">Executable .jar</span>
+            </div>
+            <div>
+              <a href="https://github.com/lille-ricky/Memory-Game-" class="btn btn-outline" target="_blank" style="width: 100%; justify-content: center;">→ { CODE ON GITHUB }</a>
+            </div>
+          </div>
+        </div>
 
-  <h2>Languages</h2>
-  <ul>
-    <li><strong>English:</strong> C1</li>
-    <li><strong>Italian:</strong> B2 comprehension, B1 writing, B2 speaking</li>
-    <li><strong>Spanish:</strong> B2 comprehension, A2 writing, B1 speaking</li>
-    <li><strong>Driving licence:</strong> B</li>
-  </ul>
+        <div class="tech-card">
+          <div>
+            <div class="card-header">
+              <span class="card-tag">{ JAVA / TERMINAL }</span>
+              <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.2]</span>
+            </div>
+            <h3 class="card-title">Sokoban Engine</h3>
+            <p class="card-desc">
+              The classic box-pushing game, played directly in the terminal: w, a, s and d to move, x to quit, r to restart. I built the engine in Java, including level loading, movement, and collision detection.
+            </p>
+            <div class="card-media">
+              <img src="assets/sokoban.png" alt="Sokoban Terminal preview">
+            </div>
+          </div>
+          <div>
+            <div class="tech-stack">
+              <span class="tech-item">Java</span>
+              <span class="tech-item">OOP</span>
+              <span class="tech-item">Terminal Engine</span>
+              <span class="tech-item">Collisions</span>
+            </div>
+            <div>
+              <a href="https://github.com/lille-ricky/sokoban" class="btn btn-outline" target="_blank" style="width: 100%; justify-content: center;">→ { CODE ON GITHUB }</a>
+            </div>
+          </div>
+        </div>
 
-  <h2>Contact</h2>
-  <p>I'm based near Lille, France. You can reach me at <a href="mailto:epashaj19@gmail.com">epashaj19@gmail.com</a> or find me on <a href="https://www.linkedin.com/in/ricky-tech-savvy/">LinkedIn</a>.</p>
-</main>
-<footer>© 2026 Enrik Pashaj</footer>
+        <div class="tech-card">
+          <div>
+            <div class="card-header">
+              <span class="card-tag">{ PYTHON / THEORY }</span>
+              <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.3]</span>
+            </div>
+            <h3 class="card-title">Shortest Path Analysis</h3>
+            <p class="card-desc">
+              A university SAE report in Python, written in LaTeX. Compared Dijkstra (binary heap vs. Fibonacci heap) with Bellman-Ford using real Ilévia bus transit data from the Lille area.
+            </p>
+            <div class="card-media">
+              <img src="assets/dijkstra.png" alt="Dijkstra Algorithm Graph preview">
+            </div>
+          </div>
+          <div>
+            <div class="tech-stack">
+              <span class="tech-item">Python</span>
+              <span class="tech-item">LaTeX</span>
+              <span class="tech-item">Dijkstra</span>
+              <span class="tech-item">Bellman-Ford</span>
+            </div>
+            <div>
+              <a href="https://github.com/lille-ricky/Plus-court-chemin" class="btn btn-outline" target="_blank" style="width: 100%; justify-content: center;">→ { CODE ON GITHUB }</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-header">
+        <div class="section-number">02 // TECHNICAL SKILLS</div>
+        <h2 class="section-title">Core Competencies</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-cat-title">02.1 // LANGUAGES</div>
+          <ul class="skill-list">
+            <li><strong>Java</strong> (OOP, inheritance, collections)</li>
+            <li><strong>Python</strong> (Algorithms & analysis)</li>
+            <li><strong>C</strong> (Data structures)</li>
+            <li><strong>JavaScript</strong></li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">02.2 // WEB DEVELOPMENT</div>
+          <ul class="skill-list">
+            <li><strong>HTML5 & CSS3</strong></li>
+            <li><strong>React</strong></li>
+            <li><strong>Node.js</strong></li>
+            <li><strong>Responsive Design</strong></li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">02.3 // DATABASES</div>
+          <ul class="skill-list">
+            <li><strong>PostgreSQL</strong></li>
+            <li><strong>Conceptual & Logical Schema</strong></li>
+            <li><strong>SQL Queries & Joins</strong></li>
+            <li><strong>FileZilla</strong></li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">02.4 // SYSTEMS & TOOLS</div>
+          <ul class="skill-list">
+            <li><strong>UNIX / Linux Shell</strong> (Scripting, Processes)</li>
+            <li><strong>Docker</strong></li>
+            <li><strong>Git & GitHub</strong></li>
+            <li><strong>Excel & LibreOffice Calc</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-header">
+        <div class="section-number">03 // FIELD EXPERIENCE</div>
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <span class="timeline-role">Versatile team member</span> — <span class="timeline-company">Carrefour City, Faches-Thumesnil</span>
+            </div>
+            <div class="timeline-date">April 2023 – Present</div>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Checkout, restocking, and invoice checks.</li>
+              <li>Parcel pickup point: receiving and inventorying parcels, checking use-by and best-before dates.</li>
+              <li>Training new hires and managing stock orders.</li>
+              <li>Bakery: preparation, baking, and shelf stocking.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <span class="timeline-role">Delivery rider & Team Captain</span> — <span class="timeline-company">Just Eat France</span>
+            </div>
+            <div class="timeline-date">May 2021 – January 2023</div>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Autonomous order delivery, route planning, and keeping to deadlines.</li>
+              <li>Team captain from March 2022: onboarding new recruits and being their primary point of contact in the field.</li>
+              <li>Ran the in-house workshop for bike repairs and maintenance.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-header">
+        <div class="section-number">04 // ACADEMIC BACKGROUND</div>
+        <h2 class="section-title">Education & Certifications</h2>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <span class="timeline-role">Bachelor's Degree in Computer Science (L3)</span> — <span class="timeline-company">Université d'Artois, Lens</span>
+          </div>
+          <div class="timeline-date">September 2024 – Present</div>
+        </div>
+        <div class="timeline-body">
+          <p style="margin-bottom: 0.75rem;">Faculté des Sciences Jean Perrin. Key coursework:</p>
+          <ul>
+            <li><strong>UNIX:</strong> Shell scripting, file and process management.</li>
+            <li><strong>OOP (Java):</strong> Class hierarchies, inheritance, abstract classes, typed collections.</li>
+            <li><strong>Databases:</strong> PostgreSQL, ER modeling, logical schema, SQL.</li>
+            <li><strong>Web Programming:</strong> HTML, CSS, JavaScript, React.</li>
+            <li><strong>Algorithms:</strong> Data structures and optimization in Python and C.</li>
+          </ul>
+          <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-dim);" class="mono">
+            <span class="card-tag">{ CERTIFICATION }</span> <strong>CLES English B2 Certification</strong> — Université d'Artois (February 2025)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-header">
+        <div class="section-number">05 // ABOUT & CONTACT</div>
+        <h2 class="section-title">Outside the Code & Contact</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="tech-card">
+          <div>
+            <div class="card-header">
+              <span class="card-tag">{ OUTSIDE THE CODE & READING }</span>
+            </div>
+            <h3 class="card-title">Discipline, Endurance & Reading</h3>
+            <p class="card-desc" style="font-style: italic; margin-bottom: 1rem;">
+              "I swim, cycle, run, and read. Beyond competitive swimming and endurance sports, I am an avid reader of the classics. Recently fascinated by <em>The Siege of Malta</em> following my visit to the island, I'm also a huge Tom Clancy fan (having read quite a few of his books, <em>The Hunt for Red October</em> being my favorite). I just finished <em>The Lord of the Rings: The Fellowship of the Ring</em> and am looking forward to completing the set. Hermann Hesse and his take on existentialism have been truly life-changing, with <em>Siddhartha</em> and <em>Steppenwolf</em> being my all-time favorites."
+            </p>
+            <a href="https://www.goodreads.com/user/show/195816372?ref=nav_profile_l" class="btn btn-outline" target="_blank" style="margin-top: 0.5rem;">[ GOODREADS PROFILE ↗ ]</a>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <div class="skill-cat-title" style="margin-bottom: 0.5rem;">LANGUAGES & LICENSE</div>
+            <div class="mono" style="font-size: 0.85rem; color: var(--text-muted);">
+              • English: C1<br>
+              • Italian: B2 (comprehension), B1 (writing), B2 (speaking)<br>
+              • Spanish: B2 (comprehension), A2 (writing), B1 (speaking)<br>
+              • Driving licence: B
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-card" style="justify-content: space-between;">
+          <div>
+            <div class="card-header">
+              <span class="card-tag">{ DIRECT CONTACT }</span>
+            </div>
+            <h3 class="card-title">Get in Touch</h3>
+            <p class="card-desc">
+              Based near Lille, France. Feel free to reach out via email regarding internship opportunities or software projects.
+            </p>
+            <div style="margin: 1.5rem 0;">
+              <div class="metric-label">DIRECT EMAIL</div>
+              <a href="javascript:void(0)" onclick="copyEmail('epashaj19@gmail.com')" class="mono" style="font-size: 1.1rem; color: var(--accent-red); text-decoration: none; font-weight: 700;">epashaj19@gmail.com ⧉</a>
+            </div>
+          </div>
+          <div class="hero-actions" style="margin-bottom: 0;">
+            <a href="https://www.linkedin.com/in/ricky-tech-savvy/" class="btn btn-outline" target="_blank">LINKEDIN ↗</a>
+            <a href="https://github.com/lille-ricky/" class="btn btn-outline" target="_blank">GITHUB ↗</a>
+            <a href="https://www.goodreads.com/user/show/195816372?ref=nav_profile_l" class="btn btn-outline" target="_blank">GOODREADS ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <span class="mono" style="color: var(--accent-red); font-weight: 700;">ENRIK PASHAJ</span> © 2026. All rights reserved.
+      </div>
+      <ul class="footer-links">
+        <li><a href="assets/Enrik_Pashaj_CV_stage.pdf" target="_blank">CV (FR)</a></li>
+        <li><a href="assets/Enrik_Pashaj_CV_stage_EN.pdf" target="_blank">CV (EN)</a></li>
+        <li><a href="https://github.com/lille-ricky/" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ricky-tech-savvy/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.goodreads.com/user/show/195816372?ref=nav_profile_l" target="_blank">Goodreads</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div id="toast" class="copy-toast">[ EMAIL COPIED TO CLIPBOARD! ]</div>
+
+  <script>
+    function copyEmail(email) {
+      navigator.clipboard.writeText(email).then(function() {
+        var toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(function() { toast.classList.remove('show'); }, 2500);
+      });
+    }
+  </script>
+
 </body>
 </html>
