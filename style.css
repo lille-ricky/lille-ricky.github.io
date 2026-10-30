@@ -50,12 +50,18 @@ body::before {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-    background-size: 40px 40px;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("assets/world-map.png"); 
+    background-repeat: no-repeat;
+    background-size: 250% auto;
+    opacity: 0.15;
+    
+    background-position: var(--map-x, 50%) var(--map-y, 50%);
     pointer-events: none;
     z-index: 1;
+    
+    transition: none; 
 }
 
 .container {
@@ -633,4 +639,53 @@ footer {
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
+/* Full-Screen X/Y Axis Tracker */
+#crosshair {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 2; /* Sits behind text content, above map background */
+    opacity: 0.35; /* Subtle blend with background grid */
+}
+
+/* Horizontal X-Axis Line */
+#crosshair::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-red);
+    top: var(--mouse-y, 50vh);
+}
+
+/* Vertical Y-Axis Line */
+#crosshair::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: var(--accent-red);
+    left: var(--mouse-x, 50vw);
+}
+
+/* Live Coordinates Text Label */
+#coords-text {
+    position: absolute;
+    top: var(--mouse-y, 50vh);
+    left: var(--mouse-x, 50vw);
+    transform: translate(12px, -20px); /* Offsets label slightly top-right of the pointer */
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent-red);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    text-shadow: 0 0 6px var(--accent-glow);
 }

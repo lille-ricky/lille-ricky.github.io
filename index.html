@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Portfolio</title>
+  <title>Enrik Pashaj | Portfolio</title>
   
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff2a2a'>%23</text></svg>">
   <meta property="og:title" content="Enrik Pashaj | Portfolio Informatique">
-  <meta property="og:description" content="Étudiant en Licence Informatique (L3) à l'Université d'Artois — En recherche de stage : Online">
+  <meta property="og:description" content="Étudiant en Licence Informatique (L3) à l'Université d'Artois">
   <meta property="og:image" content="https://enrik.is-a.dev/assets/dijkstra.png">
   <meta property="og:url" content="https://enrik.is-a.dev/">
   <meta property="og:type" content="website">
@@ -18,11 +18,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+  <div id="crosshair"><span id="coords-text">[ 0000 , 0000 ]</span></div>
   <header class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="nav-brand">
-        
         <span>ENRIK PASHAJ <span class="tag-brand">{.DEV}</span></span>
       </a>
       <ul class="nav-links">
@@ -40,20 +39,19 @@
   <main class="container">
     <section class="hero">
       <div class="hero-badge">Dev Junior</div>
-      <h1 class="hero-title"> Faites comme chez vous :) </h1>
+      <h1 class="hero-title">Faites comme chez vous :)</h1>
       <p class="hero-subtitle">
         Étudiant en 3ème année de Licence Informatique à l'Université d'Artois. Je cherche des opportunités pour construire des applications concrètes, rigoureuses et apprendre auprès d'équipes expérimentées.
       </p>
       
       <div class="hero-actions">
-        <a href="assets/Enrik_Pashaj_CV_stage.pdf" class="btn btn-primary" target="_blank">-> A propos de moi </a>
+        <a href="assets/Enrik_Pashaj_CV_stage.pdf" class="btn btn-primary" target="_blank">-> À propos de moi</a>
         <a href="https://github.com/lille-ricky/" class="btn btn-outline" target="_blank">GITHUB ↗</a>
         <a href="https://www.linkedin.com/in/ricky-tech-savvy/" class="btn btn-outline" target="_blank">LINKEDIN ↗</a>
         <a href="https://www.goodreads.com/user/show/195816372?ref=nav_profile_l" class="btn btn-outline" target="_blank">GOODREADS ↗</a>
       </div>
 
-      
-        </div>
+      <div class="metrics-grid">
         <div class="metric-card">
           <div class="metric-label">01 // LOCALISATION</div>
           <div class="metric-value">Lille / Lens, France</div>
@@ -98,7 +96,7 @@
               <span class="tech-item">Executable .jar</span>
             </div>
             <div>
-              <a href="https://github.com/lille-ricky/Memory-Game-" class="btn btn-outline btn-full" target="_blank" >→ { CODE GITHUB }</a>
+              <a href="https://github.com/lille-ricky/Memory-Game-" class="btn btn-outline btn-full" target="_blank">→ { CODE GITHUB }</a>
             </div>
           </div>
         </div>
@@ -125,7 +123,7 @@
               <span class="tech-item">Collisions</span>
             </div>
             <div>
-              <a href="https://github.com/lille-ricky/sokoban" class="btn btn-outline btn-full" target="_blank" >→ { CODE GITHUB }</a>
+              <a href="https://github.com/lille-ricky/sokoban" class="btn btn-outline btn-full" target="_blank">→ { CODE GITHUB }</a>
             </div>
           </div>
         </div>
@@ -229,7 +227,6 @@
               <li>Formation des nouveaux équipiers et gestion des commandes de marchandises.</li>
               <li>Secteur boulangerie : préparation, cuisson et mise en rayon.</li>
               <li>Responsable colis Mondial Relay / Colis Prive / GLS : Inventaire, Approvision du stock, Distribution.</li>
-            
             </ul>
           </div>
         </div>
@@ -351,15 +348,7 @@
 
   <div id="toast" class="copy-toast">[ EMAIL COPIÉ DANS LE PRESSE-PAPIER ! ]</div>
 
-  <script>
-    function copyEmail(email) {
-      navigator.clipboard.writeText(email).then(function() {
-        var toast = document.getElementById('toast');
-        toast.classList.add('show');
-        setTimeout(function() { toast.classList.remove('show'); }, 2500);
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
