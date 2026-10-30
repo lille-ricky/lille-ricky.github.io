@@ -21,6 +21,12 @@
     padding: 0;
 }
 
+.btn-full {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
     background-color: var(--bg-dark);
@@ -597,9 +603,7 @@ footer {
         display: none;
     }
 
-    .metrics-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+    
 
     .grid-2,
     .grid-3 {
