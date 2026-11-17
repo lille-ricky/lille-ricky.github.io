@@ -657,7 +657,7 @@ footer {
     html, body, a, button, [role="button"], input, textarea, select {
         cursor: none !important;
     }
-    
+
     #crosshair {
         display: block;
         position: fixed;
@@ -744,4 +744,57 @@ footer {
         white-space: nowrap;
         text-shadow: 0 0 6px var(--accent-glow);
     }
+}
+
+/* Live Game Modal */
+.game-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 5, 6, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.game-modal.active {
+    display: flex;
+}
+
+.game-modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--accent-red);
+    box-shadow: 0 0 40px rgba(255, 42, 42, 0.25);
+    width: 100%;
+    max-width: 850px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.25rem;
+    background: #08090a;
+    border-bottom: 1px solid var(--border-dim);
+}
+
+.game-frame-wrapper {
+    width: 100%;
+    height: 75vh;
+    max-height: 750px;
+    background: #000;
+}
+
+.game-frame-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
 }

@@ -82,3 +82,30 @@ window.addEventListener('mousemove', (e) => {
   vx += e.movementX * 0.0008;
   vy += e.movementY * 0.0008;
 }, { passive: true });
+
+function openTronModal() {
+  const modal = document.getElementById('game-modal');
+  const frame = document.getElementById('tron-frame');
+  if (modal && frame) {
+    frame.src = 'https://enrik.is-a.dev/Tron---Ares/';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    frame.onload = () => frame.contentWindow.focus();
+  }
+}
+
+function closeTronModal() {
+  const modal = document.getElementById('game-modal');
+  const frame = document.getElementById('tron-frame');
+  if (modal && frame) {
+    modal.classList.remove('active');
+    frame.src = '';
+    document.body.style.overflow = '';
+  }
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeTronModal();
+  }
+});
