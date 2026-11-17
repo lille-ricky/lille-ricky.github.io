@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Enrik Pashaj | Portfolio</title>
 
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff2a2a'>%23</text></svg>">
@@ -23,7 +23,11 @@
 </head>
 
 <body>
-  <div id="crosshair"><span id="coords-text">[ 0000 , 0000 ]</span></div>
+  <div id="crosshair">
+    <span id="coords-text">[ 0000 , 0000 ]</span>
+    <div id="cursor-reticle"></div>
+  </div>
+
   <header class="navbar">
     <div class="container nav-container">
       <a href="en.html" class="nav-brand">
@@ -35,9 +39,11 @@
         <li><a href="#experience">03.EXPERIENCE</a></li>
         <li><a href="#education">04.EDUCATION</a></li>
         <li><a href="#contact">05.CONTACT</a></li>
-        <li><a href="index.html" class="lang-switch">FR ↗</a></li>
       </ul>
-      <a href="assets/Enrik_Pashaj_CV_stage_EN.pdf" class="btn btn-outline" target="_blank">[CV PDF]</a>
+      <div class="nav-actions">
+        <a href="index.html" class="lang-switch">FR ↗</a>
+        <a href="assets/Enrik_Pashaj_CV_stage_EN.pdf" class="btn btn-outline" target="_blank">[CV PDF]</a>
+      </div>
     </div>
   </header>
 
@@ -75,129 +81,137 @@
     </section>
 
     <section id="projects">
-      <div class="section-header">
-        <div class="section-number">01 // PROJECTS & SOFTWARE DEVELOPMENT</div>
-        <h2 class="section-title">Academic & Personal Projects</h2>
-      </div>
-
-      <div class="grid-3">
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-tag">{ JAVA / SWING }</span>
-              <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.1]</span>
-            </div>
-            <h3 class="card-title">Memory Game</h3>
-            <p class="card-desc">
-              A matching game using League of Legends visuals, built in Java with Swing. It follows the MVC pattern,
-              tracks attempts and time, handles card clicks and menu actions, and runs from an executable .jar file.
-            </p>
-            <div class="card-media">
-              <img src="assets/memory-game.png" alt="Memory Game preview" onerror="this.style.display='none'">
-            </div>
-          </div>
-          <div>
-            <div class="tech-stack">
-              <span class="tech-item">Java</span>
-              <span class="tech-item">Swing</span>
-              <span class="tech-item">MVC</span>
-              <span class="tech-item">Executable .jar</span>
-            </div>
-            <div>
-              <a href="https://github.com/lille-ricky/Memory-Game-" class="btn btn-outline btn-full" target="_blank">→ {
-                CODE ON GITHUB }</a>
-            </div>
-          </div>
+      <div class="section-header projects-header">
+        <div>
+          <div class="section-number">01 // PROJECTS & SOFTWARE DEVELOPMENT</div>
+          <h2 class="section-title">Academic & Personal Projects</h2>
         </div>
-
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-tag">{ JAVA / TERMINAL }</span>
-              <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.2]</span>
-            </div>
-            <h3 class="card-title">Sokoban Engine</h3>
-            <p class="card-desc">
-              The classic box-pushing game, played directly in the terminal: w, a, s and d to move, x to quit, r to
-              restart. I built the engine in Java, including level loading, movement, and collision detection.
-            </p>
-            <div class="card-media">
-              <img src="assets/sokoban.png" alt="Sokoban Terminal preview">
-            </div>
-          </div>
-          <div>
-            <div class="tech-stack">
-              <span class="tech-item">Java</span>
-              <span class="tech-item">OOP</span>
-              <span class="tech-item">Terminal Engine</span>
-              <span class="tech-item">Collisions</span>
-            </div>
-            <div>
-              <a href="https://github.com/lille-ricky/sokoban" class="btn btn-outline btn-full" target="_blank">→ { CODE
-                ON GITHUB }</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-tag">{ JAVASCRIPT / CANVAS }</span>
-              <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.4]</span>
-            </div>
-            <h3 class="card-title">Tron : Ares</h3>
-            <p class="card-desc">
-              Local 2-player Tron arcade game built in JavaScript[cite: 7]. Features grid-based trail collision
-              detection, live score tracking, customizable keybindings, and a neon UI[cite: 7].
-            </p>
-            <div class="card-media">
-              <img src="assets/tron.jpeg" alt="Tron Ares Game preview" [cite: 7]>
-            </div>
-          </div>
-          <div>
-            <div class="tech-stack">
-              <span class="tech-item">JavaScript</span>
-              <span class="tech-item">HTML5 Canvas</span>
-              <span class="tech-item">2 Players</span>
-              <span class="tech-item">Game Loop</span>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-              <button onclick="openTronModal()" class="btn btn-primary btn-full">▶ { PLAY DEMO }</button>
-              <a href="https://github.com/lille-ricky/Tron---Ares" class="btn btn-outline btn-full" target="_blank">→ {
-                CODE ON GITHUB }</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-tag">{ PYTHON / THEORY }</span>
-              <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.3]</span>
-            </div>
-            <h3 class="card-title">Shortest Path Analysis</h3>
-            <p class="card-desc">
-              A university SAE report in Python, written in LaTeX. Compared Dijkstra (binary heap vs. Fibonacci heap)
-              with Bellman-Ford using real Ilévia bus transit data from the Lille area.
-            </p>
-            <div class="card-media">
-              <img src="assets/dijkstra.png" alt="Dijkstra Algorithm Graph preview">
-            </div>
-          </div>
-          <div>
-            <div class="tech-stack">
-              <span class="tech-item">Python</span>
-              <span class="tech-item">LaTeX</span>
-              <span class="tech-item">Dijkstra</span>
-              <span class="tech-item">Bellman-Ford</span>
-            </div>
-            <div>
-              <a href="https://github.com/lille-ricky/Plus-court-chemin" class="btn btn-outline btn-full"
-                target="_blank">→ { CODE ON GITHUB }</a>
-            </div>
-          </div>
+        <div class="carousel-controls">
+          <button type="button" class="btn btn-outline carousel-btn" id="proj-prev" aria-label="Previous project">[ &lt; PREV ]</button>
+          <span class="mono carousel-indicator" id="proj-indicator">[ 01 / 02 ]</span>
+          <button type="button" class="btn btn-outline carousel-btn" id="proj-next" aria-label="Next project">[ NEXT &gt; ]</button>
         </div>
       </div>
+
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="projects-track">
+          <div class="tech-card carousel-slide">
+            <div>
+              <div class="card-header">
+                <span class="card-tag">{ JAVA / SWING }</span>
+                <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.1]</span>
+              </div>
+              <h3 class="card-title">Memory Game</h3>
+              <p class="card-desc">
+                A matching game using League of Legends visuals, built in Java with Swing. It follows the MVC pattern,
+                tracks attempts and time, handles card clicks and menu actions, and runs from an executable .jar file.
+              </p>
+              <div class="card-media">
+                <img src="assets/memory-game.png" alt="Memory Game preview" onerror="this.style.display='none'">
+              </div>
+            </div>
+            <div>
+              <div class="tech-stack">
+                <span class="tech-item">Java</span>
+                <span class="tech-item">Swing</span>
+                <span class="tech-item">MVC</span>
+                <span class="tech-item">Executable .jar</span>
+              </div>
+              <div>
+                <a href="https://github.com/lille-ricky/Memory-Game-" class="btn btn-outline btn-full" target="_blank">→ { CODE ON GITHUB }</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-card carousel-slide">
+            <div>
+              <div class="card-header">
+                <span class="card-tag">{ JAVA / TERMINAL }</span>
+                <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.2]</span>
+              </div>
+              <h3 class="card-title">Sokoban Engine</h3>
+              <p class="card-desc">
+                The classic box-pushing game, played directly in the terminal: w, a, s and d to move, x to quit, r to
+                restart. I built the engine in Java, including level loading, movement, and collision detection.
+              </p>
+              <div class="card-media">
+                <img src="assets/sokoban.png" alt="Sokoban Terminal preview">
+              </div>
+            </div>
+            <div>
+              <div class="tech-stack">
+                <span class="tech-item">Java</span>
+                <span class="tech-item">OOP</span>
+                <span class="tech-item">Terminal Engine</span>
+                <span class="tech-item">Collisions</span>
+              </div>
+              <div>
+                <a href="https://github.com/lille-ricky/sokoban" class="btn btn-outline btn-full" target="_blank">→ { CODE ON GITHUB }</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-card carousel-slide">
+            <div>
+              <div class="card-header">
+                <span class="card-tag">{ PYTHON / THEORY }</span>
+                <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.3]</span>
+              </div>
+              <h3 class="card-title">Shortest Path Analysis</h3>
+              <p class="card-desc">
+                A university SAE report in Python, written in LaTeX. Compared Dijkstra (binary heap vs. Fibonacci heap)
+                with Bellman-Ford using real Ilévia bus transit data from the Lille area.
+              </p>
+              <div class="card-media">
+                <img src="assets/dijkstra.png" alt="Dijkstra Algorithm Graph preview">
+              </div>
+            </div>
+            <div>
+              <div class="tech-stack">
+                <span class="tech-item">Python</span>
+                <span class="tech-item">LaTeX</span>
+                <span class="tech-item">Dijkstra</span>
+                <span class="tech-item">Bellman-Ford</span>
+              </div>
+              <div>
+                <a href="https://github.com/lille-ricky/Plus-court-chemin" class="btn btn-outline btn-full"
+                  target="_blank">→ { CODE ON GITHUB }</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-card carousel-slide">
+            <div>
+              <div class="card-header">
+                <span class="card-tag">{ JAVASCRIPT / CANVAS }</span>
+                <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.4]</span>
+              </div>
+              <h3 class="card-title">Tron : Ares</h3>
+              <p class="card-desc">
+                Local 2-player Tron arcade game built in JavaScript. Features grid-based trail collision
+                detection, live score tracking, customizable keybindings, and a neon UI.
+              </p>
+              <div class="card-media">
+                <img src="assets/tron.jpeg" alt="Tron Ares Game preview">
+              </div>
+            </div>
+            <div>
+              <div class="tech-stack">
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">HTML5 Canvas</span>
+                <span class="tech-item">2 Players</span>
+                <span class="tech-item">Game Loop</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <button type="button" onclick="openTronModal()" class="btn btn-primary btn-full">▶ { PLAY DEMO }</button>
+                <a href="https://github.com/lille-ricky/Tron---Ares" class="btn btn-outline btn-full" target="_blank">→ { CODE ON GITHUB }</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-dots" id="carousel-dots"></div>
     </section>
 
     <section id="skills">
@@ -407,12 +421,12 @@
 
   <div id="toast" class="copy-toast">[ EMAIL COPIED TO CLIPBOARD! ]</div>
 
-  <div id="game-modal" class="game-modal" onclick="closeTronModal(event)">
+  <div id="game-modal" class="game-modal" onclick="closeTronModal()">
     <div class="game-modal-content" onclick="event.stopPropagation()">
       <div class="game-modal-header">
         <span class="mono" style="color: var(--accent-red); font-weight: 700;">[ EXECUTING // TRON_ARES.JS ]</span>
-        <button onclick="closeTronModal()" class="btn btn-outline"
-          style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">[ ESC / FERMER ✕ ]</button>
+        <button type="button" onclick="closeTronModal()" class="btn btn-outline"
+          style="padding: 0.35rem 0.85rem; font-size: 0.78rem;">[ ESC / CLOSE ✕ ]</button>
       </div>
       <div class="game-frame-wrapper">
         <iframe id="tron-frame" src="" title="Tron Ares Game" frameborder="0" allowfullscreen></iframe>

@@ -27,6 +27,7 @@
     <span id="coords-text">[ 0000 , 0000 ]</span>
     <div id="cursor-reticle"></div>
   </div>
+
   <header class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="nav-brand">
@@ -38,9 +39,11 @@
         <li><a href="#experience">03.EXPÉRIENCE</a></li>
         <li><a href="#formation">04.FORMATION</a></li>
         <li><a href="#contact">05.CONTACT</a></li>
-        <li><a href="en.html" class="lang-switch">EN ↗</a></li>
       </ul>
-      <a href="assets/Enrik_Pashaj_CV_stage.pdf" class="btn btn-outline" target="_blank">[CV PDF]</a>
+      <div class="nav-actions">
+        <a href="en.html" class="lang-switch">EN ↗</a>
+        <a href="assets/Enrik_Pashaj_CV_stage.pdf" class="btn btn-outline" target="_blank">[CV PDF]</a>
+      </div>
     </div>
   </header>
 
@@ -78,131 +81,139 @@
     </section>
 
     <section id="projets">
-      <div class="section-header">
-        <div class="section-number">01 // PROJETS & DÉVELOPPEMENT</div>
-        <h2 class="section-title">Projets Académiques & Personnels</h2>
-      </div>
-
-      <div class="grid-3">
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-tag">{ JAVA / SWING }</span>
-              <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.1]</span>
-            </div>
-            <h3 class="card-title">Memory Game</h3>
-            <p class="card-desc">
-              Un jeu de paires avec les visuels de League of Legends, écrit en Java avec Swing. Il suit le modèle MVC,
-              compte les essais et le temps, gère les clics sur les cartes et les actions du menu, et se lance depuis un
-              fichier .jar exécutable.
-            </p>
-            <div class="card-media">
-              <img src="assets/memory-game.png" alt="Memory Game preview" onerror="this.style.display='none'">
-            </div>
-          </div>
-          <div>
-            <div class="tech-stack">
-              <span class="tech-item">Java</span>
-              <span class="tech-item">Swing</span>
-              <span class="tech-item">MVC</span>
-              <span class="tech-item">Executable .jar</span>
-            </div>
-            <div>
-              <a href="https://github.com/lille-ricky/Memory-Game-" class="btn btn-outline btn-full" target="_blank">→ {
-                CODE GITHUB }</a>
-            </div>
-          </div>
+      <div class="section-header projects-header">
+        <div>
+          <div class="section-number">01 // PROJETS & DÉVELOPPEMENT</div>
+          <h2 class="section-title">Espace Projets</h2>
         </div>
-
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-tag">{ JAVA / TERMINAL }</span>
-              <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.2]</span>
-            </div>
-            <h3 class="card-title">Sokoban Engine</h3>
-            <p class="card-desc">
-              Le classique jeu de caisses, jouable directement dans le terminal : w, a, s et d pour se déplacer, x pour
-              quitter, r pour recommencer. Moteur développé en Java : chargement des niveaux, déplacements et détection
-              des collisions.
-            </p>
-            <div class="card-media">
-              <img src="assets/sokoban.png" alt="Sokoban Terminal preview">
-            </div>
-          </div>
-          <div>
-            <div class="tech-stack">
-              <span class="tech-item">Java</span>
-              <span class="tech-item">POO</span>
-              <span class="tech-item">Terminal Engine</span>
-              <span class="tech-item">Collisions</span>
-            </div>
-            <div>
-              <a href="https://github.com/lille-ricky/sokoban" class="btn btn-outline btn-full" target="_blank">→ { CODE
-                GITHUB }</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-tag">{ JAVASCRIPT / CANVAS }</span>
-              <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.4]</span>
-            </div>
-            <h3 class="card-title">Tron : Ares</h3>
-            <p class="card-desc">
-              Jeu d'arcade Tron en local 2 joueurs développé en JavaScript. Gestion des collisions sur grille, score en
-              temps réel, configuration personnalisée des contrôles et interface néon[cite: 7].
-            </p>
-            <div class="card-media">
-              <img src="assets/tron.jpeg" alt="Aperçu du jeu Tron Ares" [cite: 7]>
-            </div>
-          </div>
-          <div>
-            <div class="tech-stack">
-              <span class="tech-item">JavaScript</span>
-              <span class="tech-item">HTML5 Canvas</span>
-              <span class="tech-item">2 Joueurs</span>
-              <span class="tech-item">Game Loop</span>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-              <button onclick="openTronModal()" class="btn btn-primary btn-full">▶ { JOUER DEMO }</button>
-              <a href="https://github.com/lille-ricky/Tron---Ares" class="btn btn-outline btn-full" target="_blank">→ {
-                CODE GITHUB }</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-tag">{ PYTHON / THEORY }</span>
-              <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.3]</span>
-            </div>
-            <h3 class="card-title">Plus court chemin</h3>
-            <p class="card-desc">
-              Un rapport de SAE en Python, rédigé en LaTeX. Comparaison de Dijkstra (tas binaire et tas de Fibonacci)
-              avec Bellman-Ford sur les données réelles du réseau de bus Ilévia (Lille).
-            </p>
-            <div class="card-media">
-              <img src="assets/dijkstra.png" alt="Graphique Dijkstra & Ilévia preview">
-            </div>
-          </div>
-          <div>
-            <div class="tech-stack">
-              <span class="tech-item">Python</span>
-              <span class="tech-item">LaTeX</span>
-              <span class="tech-item">Dijkstra</span>
-              <span class="tech-item">Bellman-Ford</span>
-            </div>
-            <div>
-              <a href="https://github.com/lille-ricky/Plus-court-chemin" class="btn btn-outline btn-full"
-                target="_blank">→ { Lien vers le rapport }</a>
-            </div>
-          </div>
+        <div class="carousel-controls">
+          <button type="button" class="btn btn-outline carousel-btn" id="proj-prev" aria-label="Projet précédent">[ &lt; PREV ]</button>
+          <span class="mono carousel-indicator" id="proj-indicator">[ 01 / 04 ]</span>
+          <button type="button" class="btn btn-outline carousel-btn" id="proj-next" aria-label="Projet suivant">[ NEXT &gt; ]</button>
         </div>
       </div>
+
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="projects-track">
+          <div class="tech-card carousel-slide">
+            <div>
+              <div class="card-header">
+                <span class="card-tag">{ JAVA / SWING }</span>
+                <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.1]</span>
+              </div>
+              <h3 class="card-title">Memory Game</h3>
+              <p class="card-desc">
+                Un jeu de paires avec les visuels de League of Legends, écrit en Java avec Swing. Il suit le modèle MVC,
+                compte les essais et le temps, gère les clics sur les cartes et les actions du menu, et se lance depuis un
+                fichier .jar exécutable.
+              </p>
+              <div class="card-media">
+                <img src="assets/memory-game.png" alt="Memory Game preview" onerror="this.style.display='none'">
+              </div>
+            </div>
+            <div>
+              <div class="tech-stack">
+                <span class="tech-item">Java</span>
+                <span class="tech-item">Swing</span>
+                <span class="tech-item">MVC</span>
+                <span class="tech-item">Executable .jar</span>
+              </div>
+              <div>
+                <a href="https://github.com/lille-ricky/Memory-Game-" class="btn btn-outline btn-full" target="_blank">→ { CODE GITHUB }</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-card carousel-slide">
+            <div>
+              <div class="card-header">
+                <span class="card-tag">{ JAVA / TERMINAL }</span>
+                <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.2]</span>
+              </div>
+              <h3 class="card-title">Sokoban Engine</h3>
+              <p class="card-desc">
+                Le classique jeu de caisses, jouable directement dans le terminal : w, a, s et d pour se déplacer, x pour
+                quitter, r pour recommencer. Moteur développé en Java : chargement des niveaux, déplacements et détection
+                des collisions.
+              </p>
+              <div class="card-media">
+                <img src="assets/sokoban.png" alt="Sokoban Terminal preview">
+              </div>
+            </div>
+            <div>
+              <div class="tech-stack">
+                <span class="tech-item">Java</span>
+                <span class="tech-item">POO</span>
+                <span class="tech-item">Terminal Engine</span>
+                <span class="tech-item">Collisions</span>
+              </div>
+              <div>
+                <a href="https://github.com/lille-ricky/sokoban" class="btn btn-outline btn-full" target="_blank">→ { CODE GITHUB }</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-card carousel-slide">
+            <div>
+              <div class="card-header">
+                <span class="card-tag">{ PYTHON / THEORY }</span>
+                <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.3]</span>
+              </div>
+              <h3 class="card-title">Plus court chemin</h3>
+              <p class="card-desc">
+                Un rapport de SAE en Python, rédigé en LaTeX. Comparaison de Dijkstra (tas binaire et tas de Fibonacci)
+                avec Bellman-Ford sur les données réelles du réseau de bus Ilévia (Lille).
+              </p>
+              <div class="card-media">
+                <img src="assets/dijkstra.png" alt="Graphique Dijkstra & Ilévia preview">
+              </div>
+            </div>
+            <div>
+              <div class="tech-stack">
+                <span class="tech-item">Python</span>
+                <span class="tech-item">LaTeX</span>
+                <span class="tech-item">Dijkstra</span>
+                <span class="tech-item">Bellman-Ford</span>
+              </div>
+              <div>
+                <a href="https://github.com/lille-ricky/Plus-court-chemin" class="btn btn-outline btn-full"
+                  target="_blank">→ { Lien vers le rapport }</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-card carousel-slide">
+            <div>
+              <div class="card-header">
+                <span class="card-tag">{ JAVASCRIPT / CANVAS }</span>
+                <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.4]</span>
+              </div>
+              <h3 class="card-title">Tron : Ares</h3>
+              <p class="card-desc">
+                Jeu d'arcade Tron en local 2 joueurs développé en JavaScript. Gestion des collisions sur grille, score en
+                temps réel, configuration personnalisée des contrôles et interface néon[cite: 7].
+              </p>
+              <div class="card-media">
+                <img src="assets/tron.jpeg" alt="Aperçu du jeu Tron Ares"[cite: 7]>
+              </div>
+            </div>
+            <div>
+              <div class="tech-stack">
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">HTML5 Canvas</span>
+                <span class="tech-item">2 Joueurs</span>
+                <span class="tech-item">Game Loop</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <button type="button" onclick="openTronModal()" class="btn btn-primary btn-full">▶ { JOUER DEMO }</button>
+                <a href="https://github.com/lille-ricky/Tron---Ares" class="btn btn-outline btn-full" target="_blank">→ { CODE GITHUB }</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-dots" id="carousel-dots"></div>
     </section>
 
     <section id="competences">
@@ -275,8 +286,7 @@
               <li>Gestion du stock : réception, inventaire et contrôle des DLC/DLUO.</li>
               <li>Formation des nouveaux équipiers et gestion des commandes de marchandises.</li>
               <li>Secteur boulangerie : préparation, cuisson et mise en rayon.</li>
-              <li>Responsable colis Mondial Relay / Colis Prive / GLS : Inventaire, Approvision du stock, Distribution.
-              </li>
+              <li>Responsable colis Mondial Relay / Colis Prive / GLS : Inventaire, Approvision du stock, Distribution.</li>
             </ul>
           </div>
         </div>
@@ -318,8 +328,7 @@
           <p style="margin-bottom: 0.75rem;">Faculté des Sciences Jean Perrin. Modules clés :</p>
           <ul>
             <li><strong>UNIX :</strong> Programmation shell, gestion de fichiers et de processus.</li>
-            <li><strong>POO (Java) :</strong> Hiérarchies de classes, héritage, classes abstraites, collections typées.
-            </li>
+            <li><strong>POO (Java) :</strong> Hiérarchies de classes, héritage, classes abstraites, collections typées.</li>
             <li><strong>Bases de données :</strong> PostgreSQL, MCD, MLD, requêtes SQL.</li>
             <li><strong>Programmation Web :</strong> HTML, CSS, JavaScript, React.</li>
             <li><strong>Algorithmique :</strong> Structures de données et complexité en Python et C.</li>
@@ -383,8 +392,7 @@
             </div>
           </div>
           <div class="hero-actions" style="margin-bottom: 0;">
-            <a href="https://www.linkedin.com/in/ricky-tech-savvy/" class="btn btn-outline" target="_blank">LINKEDIN
-              ↗</a>
+            <a href="https://www.linkedin.com/in/ricky-tech-savvy/" class="btn btn-outline" target="_blank">LINKEDIN ↗</a>
             <a href="https://github.com/lille-ricky/" class="btn btn-outline" target="_blank">GITHUB ↗</a>
             <a href="https://www.goodreads.com/user/show/195816372?ref=nav_profile_l" class="btn btn-outline"
               target="_blank">GOODREADS ↗</a>
@@ -412,12 +420,12 @@
 
   <div id="toast" class="copy-toast">[ EMAIL COPIÉ DANS LE PRESSE-PAPIER ! ]</div>
 
-  <div id="game-modal" class="game-modal" onclick="closeTronModal(event)">
+  <div id="game-modal" class="game-modal" onclick="closeTronModal()">
     <div class="game-modal-content" onclick="event.stopPropagation()">
       <div class="game-modal-header">
         <span class="mono" style="color: var(--accent-red); font-weight: 700;">[ EXECUTING // TRON_ARES.JS ]</span>
-        <button onclick="closeTronModal()" class="btn btn-outline"
-          style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">[ ESC / FERMER ✕ ]</button>
+        <button type="button" onclick="closeTronModal()" class="btn btn-outline"
+          style="padding: 0.35rem 0.85rem; font-size: 0.78rem;">[ ESC / FERMER ✕ ]</button>
       </div>
       <div class="game-frame-wrapper">
         <iframe id="tron-frame" src="" title="Tron Ares Game" frameborder="0" allowfullscreen></iframe>

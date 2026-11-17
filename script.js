@@ -68,8 +68,13 @@ window.addEventListener('wheel', (e) => {
 }, { passive: true });
 
 const coordsText = document.getElementById('coords-text');
+const crosshairEl = document.getElementById('crosshair');
 
 window.addEventListener('mousemove', (e) => {
+  if (crosshairEl && crosshairEl.classList.contains('hidden-in-game')) {
+    crosshairEl.classList.remove('hidden-in-game');
+  }
+
   document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
   document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
 
@@ -83,24 +88,120 @@ window.addEventListener('mousemove', (e) => {
   vy += e.movementY * 0.0008;
 }, { passive: true });
 
+// --- Projects Revolving Carousel ---
+(function initProjectsCarousel() {
+  const track = document.getElementById('projects-track');
+  const prevBtn = document.getElementById('proj-prev');
+  const nextBtn = document.getElementById('proj-next');
+  const indicator = document.getElementById('proj-indicator');
+  const dotsContainer = document.getElementById('carousel-dots');
+
+  if (!track) return;
+
+  const slides = Array.from(track.children);
+  const total = slides.length;
+  let currentIndex = 0;
+
+  function getVisibleCount() {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 960) return 2;
+    return 3;
+  }
+
+  function updateCarousel() {
+    const visible = getVisibleCount();
+    const maxIndex = Math.max(0, total - visible);
+
+    if (currentIndex > maxIndex) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = maxIndex;
+
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(track).gap) || 24;
+    const offset = currentIndex * (slideWidth + gap);
+
+    track.style.transform = `translateX(-${offset}px)`;
+
+    if (indicator) {
+      const displayNum = String(currentIndex + 1).padStart(2, '0');
+      const totalNum = String(maxIndex + 1).padStart(2, '0');
+      indicator.textContent = `[ ${displayNum} / ${totalNum} ]`;
+    }
+
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i <= maxIndex; i++) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
+        dot.setAttribute('aria-label', `Position ${i + 1}`);
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateCarousel();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      const maxIndex = Math.max(0, total - getVisibleCount());
+      currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+      updateCarousel();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const maxIndex = Math.max(0, total - getVisibleCount());
+      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+      updateCarousel();
+    });
+  }
+
+  window.addEventListener('resize', updateCarousel);
+  updateCarousel();
+})();
+
+// --- Full-Screen Tron Game Modal & Crosshair Toggle ---
+const tronFrame = document.getElementById('tron-frame');
+
+if (tronFrame && crosshairEl) {
+  tronFrame.addEventListener('mouseenter', () => {
+    crosshairEl.classList.add('hidden-in-game');
+  });
+
+  tronFrame.addEventListener('mouseleave', () => {
+    crosshairEl.classList.remove('hidden-in-game');
+  });
+}
+
+window.addEventListener('blur', () => {
+  if (document.activeElement === tronFrame && crosshairEl) {
+    crosshairEl.classList.add('hidden-in-game');
+  }
+});
+
 function openTronModal() {
   const modal = document.getElementById('game-modal');
-  const frame = document.getElementById('tron-frame');
-  if (modal && frame) {
-    frame.src = 'https://enrik.is-a.dev/Tron---Ares/';
+  if (modal && tronFrame) {
+    tronFrame.src = 'https://enrik.is-a.dev/Tron---Ares/';
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    frame.onload = () => frame.contentWindow.focus();
+    tronFrame.onload = () => {
+      tronFrame.contentWindow.focus();
+      if (crosshairEl) crosshairEl.classList.add('hidden-in-game');
+    };
   }
 }
 
 function closeTronModal() {
   const modal = document.getElementById('game-modal');
-  const frame = document.getElementById('tron-frame');
-  if (modal && frame) {
+  if (modal && tronFrame) {
     modal.classList.remove('active');
-    frame.src = '';
+    tronFrame.src = '';
     document.body.style.overflow = '';
+    if (crosshairEl) crosshairEl.classList.remove('hidden-in-game');
   }
 }
 
