@@ -653,6 +653,11 @@ footer {
 
 /* Only enable X/Y Axis & Coordinates tracker on devices with a mouse/pointer */
 @media (hover: hover) and (pointer: fine) {
+
+    html, body, a, button, [role="button"], input, textarea, select {
+        cursor: none !important;
+    }
+    
     #crosshair {
         display: block;
         position: fixed;
@@ -661,9 +666,9 @@ footer {
         width: 100vw;
         height: 100vh;
         pointer-events: none;
-        z-index: 2;
+        z-index: 9999;
         /* Sits behind text content, above map background */
-        opacity: 0.35;
+        
     }
 
     /* Horizontal X-Axis Line */
@@ -673,7 +678,7 @@ footer {
         left: 0;
         width: 100%;
         height: 1px;
-        background-color: var(--accent-red);
+        background-color: rgba(255, 42, 42, 0.25);
         top: var(--mouse-y, 50vh);
     }
 
@@ -684,8 +689,45 @@ footer {
         top: 0;
         height: 100%;
         width: 1px;
-        background-color: var(--accent-red);
+        background-color: rgba(255, 42, 42, 0.25);
         left: var(--mouse-x, 50vw);
+    }
+
+    #cursor-reticle {
+        position: absolute;
+        top: var(--mouse-y, 50vh);
+        left: var(--mouse-x, 50vw);
+        width: 22px;
+        height: 22px;
+        transform: translate(-50%, -50%);
+    }
+
+    #cursor-reticle::before {
+        content : "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--accent-red);
+        border: 1px solid #08090a;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.85);
+        transform: translateY(-50%);
+        box-sizing: content-box;
+    }
+
+    #cursor-reticle::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background-color: var(--accent-red);
+        border: 1px solid #08090a;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.85);
+        transform: translateX(-50);
+        box-sizing: content-box;
     }
 
     /* Live Coordinates Text Label */
