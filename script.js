@@ -163,43 +163,47 @@ window.addEventListener('mousemove', (e) => {
   updateCarousel();
 })();
 
-// --- Full-Screen Tron Game Modal & Crosshair Toggle ---
-const tronFrame = document.getElementById('tron-frame');
+// --- Full-Screen Game Modal & Crosshair Toggle ---
+const gameFrame = document.getElementById('game-frame');
+const gameModalTitle = document.getElementById('game-modal-title');
 
-if (tronFrame && crosshairEl) {
-  tronFrame.addEventListener('mouseenter', () => {
+if (gameFrame && crosshairEl) {
+  gameFrame.addEventListener('mouseenter', () => {
     crosshairEl.classList.add('hidden-in-game');
   });
 
-  tronFrame.addEventListener('mouseleave', () => {
+  gameFrame.addEventListener('mouseleave', () => {
     crosshairEl.classList.remove('hidden-in-game');
   });
 }
 
 window.addEventListener('blur', () => {
-  if (document.activeElement === tronFrame && crosshairEl) {
+  if (document.activeElement === gameFrame && crosshairEl) {
     crosshairEl.classList.add('hidden-in-game');
   }
 });
 
-function openTronModal() {
+function openGameModal(url, title) {
   const modal = document.getElementById('game-modal');
-  if (modal && tronFrame) {
-    tronFrame.src = 'https://enrik.is-a.dev/Tron---Ares/';
+  if (modal && gameFrame) {
+    if (gameModalTitle && title) {
+      gameModalTitle.textContent = `[ EXECUTING // ${title} ]`;
+    }
+    gameFrame.src = url;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    tronFrame.onload = () => {
-      tronFrame.contentWindow.focus();
+    gameFrame.onload = () => {
+      gameFrame.contentWindow.focus();
       if (crosshairEl) crosshairEl.classList.add('hidden-in-game');
     };
   }
 }
 
-function closeTronModal() {
+function closeGameModal() {
   const modal = document.getElementById('game-modal');
-  if (modal && tronFrame) {
+  if (modal && gameFrame) {
     modal.classList.remove('active');
-    tronFrame.src = '';
+    gameFrame.src = '';
     document.body.style.overflow = '';
     if (crosshairEl) crosshairEl.classList.remove('hidden-in-game');
   }
@@ -207,6 +211,6 @@ function closeTronModal() {
 
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    closeTronModal();
+    closeGameModal();
   }
 });

@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://enrik.is-a.dev/">
   <meta property="og:type" content="website">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -88,7 +88,7 @@
         </div>
         <div class="carousel-controls">
           <button type="button" class="btn btn-outline carousel-btn" id="proj-prev" aria-label="Projet précédent">[ &lt; PREV ]</button>
-          <span class="mono carousel-indicator" id="proj-indicator">[ 01 / 04 ]</span>
+          <span class="mono carousel-indicator" id="proj-indicator">[ 01 / 03 ]</span>
           <button type="button" class="btn btn-outline carousel-btn" id="proj-next" aria-label="Projet suivant">[ NEXT &gt; ]</button>
         </div>
       </div>
@@ -191,10 +191,10 @@
               <h3 class="card-title">Tron : Ares</h3>
               <p class="card-desc">
                 Jeu d'arcade Tron en local 2 joueurs développé en JavaScript. Gestion des collisions sur grille, score en
-                temps réel, configuration personnalisée des contrôles et interface néon[cite: 7].
+                temps réel, configuration personnalisée des contrôles et interface néon.
               </p>
               <div class="card-media">
-                <img src="assets/tron.jpeg" alt="Aperçu du jeu Tron Ares"[cite: 7]>
+                <img src="assets/tron.jpeg" alt="Aperçu du jeu Tron Ares">
               </div>
             </div>
             <div>
@@ -205,8 +205,37 @@
                 <span class="tech-item">Game Loop</span>
               </div>
               <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <button type="button" onclick="openTronModal()" class="btn btn-primary btn-full">▶ { JOUER DEMO }</button>
+                <button type="button" onclick="openGameModal('https://enrik.is-a.dev/Tron---Ares/', 'TRON_ARES.JS')" class="btn btn-primary btn-full">▶ { JOUER DEMO }</button>
                 <a href="https://github.com/lille-ricky/Tron---Ares" class="btn btn-outline btn-full" target="_blank">→ { CODE GITHUB }</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-card carousel-slide">
+            <div>
+              <div class="card-header">
+                <span class="card-tag">{ JAVASCRIPT / BOARD GAME }</span>
+                <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">[0.5]</span>
+              </div>
+              <h3 class="card-title">Siam</h3>
+              <p class="card-desc">
+                Adaptation web du jeu de plateau stratégique Siam pour 2 joueurs sur grille 5×5. Gestion des orientations,
+                calcul dynamique des forces de poussée et rendu entièrement piloté par l'état en JavaScript pur.
+              </p>
+              <div class="card-media">
+                <img src="assets/siam.png" alt="Aperçu du jeu Siam">
+              </div>
+            </div>
+            <div>
+              <div class="tech-stack">
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">HTML5 / CSS3</span>
+                <span class="tech-item">2 Joueurs</span>
+                <span class="tech-item">Logique de Grille</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <button type="button" onclick="openGameModal('https://enrik.is-a.dev/Siam/page.html', 'SIAM_ENGINE.JS')" class="btn btn-primary btn-full">▶ { JOUER DEMO }</button>
+                <a href="https://github.com/lille-ricky/Siam" class="btn btn-outline btn-full" target="_blank">→ { CODE GITHUB }</a>
               </div>
             </div>
           </div>
@@ -420,20 +449,20 @@
 
   <div id="toast" class="copy-toast">[ EMAIL COPIÉ DANS LE PRESSE-PAPIER ! ]</div>
 
-  <div id="game-modal" class="game-modal" onclick="closeTronModal()">
+  <div id="game-modal" class="game-modal" onclick="closeGameModal()">
     <div class="game-modal-content" onclick="event.stopPropagation()">
       <div class="game-modal-header">
-        <span class="mono" style="color: var(--accent-red); font-weight: 700;">[ EXECUTING // TRON_ARES.JS ]</span>
-        <button type="button" onclick="closeTronModal()" class="btn btn-outline"
+        <span id="game-modal-title" class="mono" style="color: var(--accent-red); font-weight: 700;">[ EXECUTING // GAME.JS ]</span>
+        <button type="button" onclick="closeGameModal()" class="btn btn-outline"
           style="padding: 0.35rem 0.85rem; font-size: 0.78rem;">[ ESC / FERMER ✕ ]</button>
       </div>
       <div class="game-frame-wrapper">
-        <iframe id="tron-frame" src="" title="Tron Ares Game" frameborder="0" allowfullscreen></iframe>
+        <iframe id="game-frame" src="" title="Interactive Game" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 
 </body>
 
