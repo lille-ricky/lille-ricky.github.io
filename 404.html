@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 // Lost in the Void</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff2a2a'>%23</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-void: #04050a;
+      --bg-card: rgba(15, 16, 19, 0.78);
+      --border-dim: rgba(255, 255, 255, 0.1);
+      --border-bright: rgba(255, 42, 42, 0.45);
+      --text-main: #f0f4f8;
+      --text-muted: #9aa8b6;
+      --accent-red: #ff2a2a;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: var(--bg-void);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Deep Space Nebula & Galaxy Backdrop */
+    .galaxy-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse at 20% 25%, rgba(88, 28, 135, 0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 75%, rgba(29, 78, 216, 0.28) 0%, transparent 55%),
+        radial-gradient(circle at 50% 50%, rgba(255, 42, 42, 0.1) 0%, transparent 65%),
+        linear-gradient(160deg, #030408 0%, #090b16 50%, #05060c 100%);
+    }
+
+    /* Multi-layer CSS Starfield */
+    .stars,
+    .stars::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 2px;
+      background: transparent;
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow:
+        12vw 18vh #fff, 24vw 72vh #cbd5e1, 38vw 14vh #fff, 52vw 84vh #93c5fd,
+        67vw 22vh #fff, 81vw 64vh #fde047, 91vw 31vh #fff, 15vw 88vh #e2e8f0,
+        44vw 49vh #fff, 73vw 91vh #fff, 8vw 42vh #93c5fd, 59vw 11vh #fff,
+        86vw 85vh #fff, 31vw 33vh #fde047, 95vw 12vh #fff, 49vw 66vh #cbd5e1,
+        19vw 55vh #fff, 63vw 44vh #fff, 77vw 15vh #93c5fd, 5vw 76vh #fff;
+      animation: twinkle 5s ease-in-out infinite alternate;
+    }
+
+    .stars::after {
+      width: 3px;
+      height: 3px;
+      box-shadow:
+        10vw 30vh rgba(255, 255, 255, 0.8), 29vw 81vh rgba(147, 197, 253, 0.9),
+        47vw 25vh rgba(255, 255, 255, 0.85), 69vw 58vh rgba(253, 224, 71, 0.75),
+        84vw 19vh rgba(255, 255, 255, 0.9), 21vw 11vh rgba(255, 255, 255, 0.7),
+        56vw 73vh rgba(147, 197, 253, 0.8), 92vw 52vh rgba(255, 255, 255, 0.85);
+      animation-delay: 2.5s;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.45; }
+      100% { opacity: 1; }
+    }
+
+    /* Card Container */
+    .void-card {
+      position: relative;
+      z-index: 2;
+      max-width: 540px;
+      width: 100%;
+      background: var(--bg-card);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-dim);
+      border-top: 2px solid var(--accent-red);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+    }
+
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag {
+      color: var(--accent-red);
+      background: rgba(255, 42, 42, 0.1);
+      padding: 0.25rem 0.55rem;
+      border-radius: 2px;
+      font-weight: 700;
+    }
+
+    .coords {
+      color: var(--text-muted);
+    }
+
+    /* Floating Confused Blitzcrank */
+    .blitz-wrapper {
+      margin: 0.5rem auto 1.5rem;
+      width: 170px;
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: floatZeroG 4.5s ease-in-out infinite;
+    }
+
+    .blitz-wrapper img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 22px rgba(250, 204, 21, 0.35));
+    }
+
+    @keyframes floatZeroG {
+      0%, 100% {
+        transform: translateY(0px) rotate(-3deg);
+      }
+      50% {
+        transform: translateY(-12px) rotate(4deg);
+      }
+    }
+
+    .error-code {
+      font-family: var(--font-mono);
+      font-size: 3.25rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.75rem;
+    }
+
+    .quote-box {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      color: #fde047;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .sub-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent-red);
+      color: #fff;
+      font-weight: 700;
+      border: 1px solid var(--accent-red);
+      box-shadow: 0 0 16px rgba(255, 42, 42, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #ff4d4d;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-main);
+      border: 1px solid var(--border-dim);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-red);
+      color: var(--accent-red);
+      transform: translateY(-1px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stars, .stars::after, .blitz-wrapper {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="galaxy-bg"></div>
+  <div class="stars"></div>
+
+  <main class="void-card">
+    <div class="status-bar">
+      <span class="tag">{ HTTP 404 // LOST IN SPACE }</span>
+      <span class="coords">[ SECTOR: UNKNOWN ]</span>
+    </div>
+
+    <div class="blitz-wrapper">
+      <img src="assets/huh_404.png" onerror="this.onerror=null; this.src='/assets/huh_404.png';" alt="Confused Blitzcrank Question Mark">
+    </div>
+
+    <div class="error-code">404</div>
+    <p class="quote-box">"Beep boop... I'm lost. Rocket Grab missed the target."</p>
+    <p class="sub-desc">
+      Cette page a dérivé hors de la galaxie (ou n'a jamais existé).<br>
+      You've drifted into deep space — let's pull you back to base.
+    </p>
+
+    <div class="actions">
+      <a href="/index.html" class="btn btn-primary">→ [ RETOUR ACCUEIL FR ]</a>
+      <a href="/en.html" class="btn btn-outline">→ [ BACK HOME EN ]</a>
+    </div>
+  </main>
+</body>
+
+</html>

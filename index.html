@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://enrik.is-a.dev/">
   <meta property="og:type" content="website">
 
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -52,13 +52,10 @@
     <section class="hero">
       <div class="hero-badge">Dev Junior</div>
 
-
-
       <div class="hero-actions">
         <a href="assets/Enrik_Pashaj_CV_stage.pdf" class="btn btn-primary" target="_blank">-> À propos de moi</a>
         <a href="https://github.com/lille-ricky/" class="btn btn-outline" target="_blank">GITHUB ↗</a>
         <a href="https://www.linkedin.com/in/ricky-tech-savvy/" class="btn btn-outline" target="_blank">LINKEDIN ↗</a>
-
       </div>
 
       <div class="metrics-grid">
@@ -102,10 +99,13 @@
               </div>
               <h3 class="card-title">Memory Game</h3>
               <p class="card-desc">
-                Un jeu de paires avec les visuels de League of Legends, écrit en Java avec Swing. Il suit le modèle MVC,
-                compte les essais et le temps, gère les clics sur les cartes et les actions du menu, et se lance depuis
-                un
-                fichier .jar exécutable.
+                Un jeu de paires avec les visuels de League of Legends, écrit en Java avec Swing. Il compte les essais
+                et le temps, gère les clics sur les cartes et les actions du menu, et se lance depuis un fichier .jar
+                exécutable.
+              </p>
+              <p class="arch-note">
+                <strong>// ARCH :</strong> Séparation stricte MVC isolant l'état du plateau de la vue Swing, avec
+                chargement des assets en classpath pour une distribution autonome en <code>.jar</code>.
               </p>
               <div class="card-media">
                 <img src="assets/memory-game.png" alt="Memory Game preview" onerror="this.style.display='none'">
@@ -134,10 +134,12 @@
               <h3 class="card-title">Sokoban Engine</h3>
               <p class="card-desc">
                 Le classique jeu de caisses, jouable directement dans le terminal : w, a, s et d pour se déplacer, x
-                pour
-                quitter, r pour recommencer. Moteur développé en Java : chargement des niveaux, déplacements et
-                détection
-                des collisions.
+                pour quitter, r pour recommencer. Moteur développé en Java : chargement des niveaux, déplacements et
+                détection des collisions.
+              </p>
+              <p class="arch-note">
+                <strong>// ARCH :</strong> Moteur sans dépendance graphique découplant le parsing ASCII des niveaux de
+                la résolution des poussées en chaîne sur grille 2D.
               </p>
               <div class="card-media">
                 <img src="assets/sokoban.png" alt="Sokoban Terminal preview">
@@ -168,6 +170,10 @@
                 Un rapport de SAE en Python, rédigé en LaTeX. Comparaison de Dijkstra (tas binaire et tas de Fibonacci)
                 avec Bellman-Ford sur les données réelles du réseau de bus Ilévia (Lille).
               </p>
+              <p class="arch-note">
+                <strong>// ARCH :</strong> Benchmark empirique montrant que le tas binaire surpasse le tas de Fibonacci
+                sur des graphes urbains peu denses malgré une complexité asymptotique inférieure.
+              </p>
               <div class="card-media">
                 <img src="assets/dijkstra.png" alt="Graphique Dijkstra & Ilévia preview">
               </div>
@@ -195,8 +201,11 @@
               <h3 class="card-title">Tron : Ares</h3>
               <p class="card-desc">
                 Jeu d'arcade Tron en local 2 joueurs développé en JavaScript. Gestion des collisions sur grille, score
-                en
-                temps réel, configuration personnalisée des contrôles et interface néon.
+                en temps réel, configuration personnalisée des contrôles et interface néon.
+              </p>
+              <p class="arch-note">
+                <strong>// ARCH :</strong> Boucle de rendu à pas fixe sur grille discrète garantissant une détection
+                déterministe des collisions et un remapping clavier sans latence.
               </p>
               <div class="card-media">
                 <img src="assets/tron.jpeg" alt="Aperçu du jeu Tron Ares">
@@ -227,8 +236,12 @@
               <h3 class="card-title">Siam</h3>
               <p class="card-desc">
                 Adaptation web du jeu de plateau stratégique Siam pour 2 joueurs sur grille 5×5. Gestion des
-                orientations,
-                calcul dynamique des forces de poussée et rendu entièrement piloté par l'état en JavaScript pur.
+                orientations, calcul dynamique des forces de poussée et rendu entièrement piloté par l'état en
+                JavaScript pur.
+              </p>
+              <p class="arch-note">
+                <strong>// ARCH :</strong> État centralisé dans un objet unique <code>S</code> et table de vecteurs
+                <code>DIRS</code> unifiant les 4 directions de poussée sans dupliquer la logique.
               </p>
               <div class="card-media">
                 <img src="assets/siam.png" alt="Aperçu du jeu Siam">
@@ -347,32 +360,31 @@
             </ul>
           </div>
         </div>
-      </div>
 
-      <div class="timeline-item">
-        <div class="timeline-header">
-          <div>
-            <span class="timeline-role">Traducteur bénévole (5 langues)</span> — <span
-              class="timeline-company">Traducteurs Sans Frontières (TWB)</span>
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <span class="timeline-role">Traducteur bénévole (5 langues)</span> — <span
+                class="timeline-company">Traducteurs Sans Frontières (TWB)</span>
+            </div>
+            <div class="timeline-date">Bénévolat</div>
           </div>
-          <div class="timeline-date">Bénévolat</div>
-        </div>
-        <div class="timeline-body">
-          <ul>
-            <li>
-              Traduction et révision de contenus humanitaires, éducatifs et médicaux en
-              <strong><span class="fi fi-gb"></span> anglais</strong>,
-              <strong><span class="fi fi-fr"></span> français</strong>,
-              <strong><span class="fi fi-it"></span> italien</strong>,
-              <strong><span class="fi fi-bg"></span> bulgare</strong> et
-              <strong><span class="fi fi-al"></span> albanais</strong>.
-            </li>
-            <li>Adaptation terminologique et respect des contraintes culturelles et linguistiques des organisations
-              partenaires.</li>
-          </ul>
+          <div class="timeline-body">
+            <ul>
+              <li>
+                Traduction et révision de contenus humanitaires, éducatifs et médicaux en
+                <strong><span class="fi fi-gb"></span> anglais</strong>,
+                <strong><span class="fi fi-fr"></span> français</strong>,
+                <strong><span class="fi fi-it"></span> italien</strong>,
+                <strong><span class="fi fi-bg"></span> bulgare</strong> et
+                <strong><span class="fi fi-al"></span> albanais</strong>.
+              </li>
+              <li>Adaptation terminologique et respect des contraintes culturelles et linguistiques des organisations
+                partenaires.</li>
+            </ul>
+          </div>
         </div>
       </div>
-
     </section>
 
     <section id="formation">
@@ -472,7 +484,7 @@
   <footer>
     <div class="container footer-content">
       <div>
-        <span class="mono" style="color: var(--accent-red); font-weight: 700;">ENRIK PASHAJ</span> © 2026. Tous droits
+        <span class="mono" style="color: var(--accent-red); font-weight: 700;">ENRIK PASHAJ</span> © <span id="current-year">2026</span>. Tous droits
         réservés.
       </div>
       <ul class="footer-links">
@@ -481,6 +493,7 @@
         <li><a href="https://github.com/lille-ricky/" target="_blank">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/ricky-tech-savvy/" target="_blank">LinkedIn</a></li>
         <li><a href="https://www.goodreads.com/user/show/195816372?ref=nav_profile_l" target="_blank">Goodreads</a></li>
+        <li><a href="javascript:void(0)" onclick="openLegalModal()">Mentions légales & Confidentialité</a></li>
       </ul>
     </div>
   </footer>
@@ -501,7 +514,60 @@
     </div>
   </div>
 
-  <script src="script.js?v=3"></script>
+  <div id="legal-modal" class="legal-modal" onclick="closeLegalModal()">
+    <div class="legal-modal-content" onclick="event.stopPropagation()">
+      <div class="legal-modal-header">
+        <span class="mono" style="color: var(--accent-red); font-weight: 700;">[ LCEN // MENTIONS_LÉGALES & RGPD
+          ]</span>
+        <button type="button" onclick="closeLegalModal()" class="btn btn-outline"
+          style="padding: 0.35rem 0.85rem; font-size: 0.78rem;">[ ESC / FERMER ✕ ]</button>
+      </div>
+      <div class="legal-modal-body">
+        <div class="legal-block">
+          <h4>01 // ÉDITEUR DU SITE (LCEN)</h4>
+          <p>
+            Ce site est un portfolio personnel non commercial édité par <strong>Enrik Pashaj</strong>, résidant près de
+            Lille, France.<br>
+            Contact direct : <a href="mailto:epashaj19@gmail.com">epashaj19@gmail.com</a>.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h4>02 // HÉBERGEMENT</h4>
+          <p>
+            Hébergé via <strong>GitHub Pages</strong> — GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107,
+            États-Unis.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h4>03 // POLITIQUE DE CONFIDENTIALITÉ & COOKIES (RGPD)</h4>
+          <p>
+            <strong>Zéro cookie & zéro traçage :</strong> Ce site n'utilise aucun cookie publicitaire, aucun outil
+            d'analyse d'audience (analytics) et ne collecte, ne stocke ni ne revend aucune donnée personnelle.
+          </p>
+          <p style="margin-top: 0.5rem;">
+            <strong>Ressources externes :</strong> Pour l'affichage des polices et des icônes, votre navigateur établit
+            une connexion technique directe avec Google Fonts (<code>fonts.googleapis.com</code>) et jsDelivr
+            (<code>cdn.jsdelivr.net</code>), susceptibles de recevoir votre adresse IP dans le cadre standard du
+            protocole HTTP.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h4>04 // PROPRIÉTÉ INTELLECTUELLE</h4>
+          <p>
+            Le code source et l'architecture de ce portfolio sont protégés par le droit d'auteur (© Enrik Pashaj). Les
+            illustrations issues de projets académiques (<em>League of Legends</em>, <em>Siam</em>) demeurent la
+            propriété de leurs éditeurs respectifs et sont utilisées uniquement à des fins pédagogiques et non
+            commerciales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=4"></script>
 
 </body>
 

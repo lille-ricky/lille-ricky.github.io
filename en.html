@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://enrik.is-a.dev/en.html">
   <meta property="og:type" content="website">
 
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -52,8 +52,6 @@
     <section class="hero">
       <div class="hero-badge">Junior Dev</div>
 
-
-
       <div class="hero-actions">
         <a href="assets/Enrik_Pashaj_CV_stage_EN.pdf" class="btn btn-primary" target="_blank">-> About me</a>
         <a href="https://github.com/lille-ricky/" class="btn btn-outline" target="_blank">GITHUB ↗</a>
@@ -76,8 +74,6 @@
           <div class="metric-value">Swimming, Cycling, Running, Reading, Warhammer</div>
         </div>
       </div>
-
-
     </section>
 
     <section id="projects">
@@ -105,8 +101,12 @@
               </div>
               <h3 class="card-title">Memory Game</h3>
               <p class="card-desc">
-                A matching game using League of Legends visuals, built in Java with Swing. It follows the MVC pattern,
-                tracks attempts and time, handles card clicks and menu actions, and runs from an executable .jar file.
+                A matching game using League of Legends visuals, built in Java with Swing. It tracks attempts and time,
+                handles card clicks and menu actions, and runs from an executable .jar file.
+              </p>
+              <p class="arch-note">
+                <strong>// ARCH:</strong> Strict MVC separation decoupling board state from Swing rendering, with
+                classpath resource loading for standalone <code>.jar</code> packaging.
               </p>
               <div class="card-media">
                 <img src="assets/memory-game.png" alt="Memory Game preview" onerror="this.style.display='none'">
@@ -137,6 +137,10 @@
                 The classic box-pushing game, played directly in the terminal: w, a, s and d to move, x to quit, r to
                 restart. I built the engine in Java, including level loading, movement, and collision detection.
               </p>
+              <p class="arch-note">
+                <strong>// ARCH:</strong> Zero-dependency terminal engine isolating ASCII map parsing from 2D grid
+                push-chain collision resolution.
+              </p>
               <div class="card-media">
                 <img src="assets/sokoban.png" alt="Sokoban Terminal preview">
               </div>
@@ -166,6 +170,10 @@
                 A university SAE report in Python, written in LaTeX. Compared Dijkstra (binary heap vs. Fibonacci heap)
                 with Bellman-Ford using real Ilévia bus transit data from the Lille area.
               </p>
+              <p class="arch-note">
+                <strong>// ARCH:</strong> Empirical benchmark demonstrating binary heaps outperform Fibonacci heaps on
+                sparse urban transit graphs despite higher asymptotic bounds.
+              </p>
               <div class="card-media">
                 <img src="assets/dijkstra.png" alt="Dijkstra Algorithm Graph preview">
               </div>
@@ -192,8 +200,12 @@
               </div>
               <h3 class="card-title">Tron : Ares</h3>
               <p class="card-desc">
-                Local 2-player Tron arcade game built in JavaScript. Features grid-based trail collision
-                detection, live score tracking, customizable keybindings, and a neon UI.
+                Local 2-player Tron arcade game built in JavaScript. Features grid-based trail collision detection, live
+                score tracking, customizable keybindings, and a neon UI.
+              </p>
+              <p class="arch-note">
+                <strong>// ARCH:</strong> Fixed-timestep game loop over a discrete coordinate grid ensuring
+                deterministic trail collisions and zero-latency key remapping.
               </p>
               <div class="card-media">
                 <img src="assets/tron.jpeg" alt="Tron Ares Game preview">
@@ -225,6 +237,10 @@
               <p class="card-desc">
                 Web adaptation of the strategic 2-player board game Siam on a 5×5 grid. Features directional orientation
                 mechanics, dynamic pushing force calculation, and state-driven rendering in vanilla JavaScript.
+              </p>
+              <p class="arch-note">
+                <strong>// ARCH:</strong> Single centralized state object <code>S</code> paired with a <code>DIRS</code>
+                vector lookup table unifying all 4 push axes without duplicated logic.
               </p>
               <div class="card-media">
                 <img src="assets/siam.png" alt="Siam Board Game preview">
@@ -342,31 +358,30 @@
             </ul>
           </div>
         </div>
-      </div>
 
-      <div class="timeline-item">
-        <div class="timeline-header">
-          <div>
-            <span class="timeline-role">Volunteer Translator (5 Languages)</span> — <span
-              class="timeline-company">Translators without Borders (TWB)</span>
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <span class="timeline-role">Volunteer Translator (5 Languages)</span> — <span
+                class="timeline-company">Translators without Borders (TWB)</span>
+            </div>
+            <div class="timeline-date">Volunteer</div>
           </div>
-          <div class="timeline-date">Volunteer</div>
-        </div>
-        <div class="timeline-body">
-          <ul>
-            <li>
-              Translated and reviewed humanitarian, educational, and medical materials across
-              <strong><span class="fi fi-gb"></span> English</strong>,
-              <strong><span class="fi fi-fr"></span> French</strong>,
-              <strong><span class="fi fi-it"></span> Italian</strong>,
-              <strong><span class="fi fi-bg"></span> Bulgarian</strong>, and
-              <strong><span class="fi fi-al"></span> Albanian</strong>.
-            </li>
-            <li>Maintained terminology consistency and cultural accuracy for partner NGOs.</li>
-          </ul>
+          <div class="timeline-body">
+            <ul>
+              <li>
+                Translated and reviewed humanitarian, educational, and medical materials across
+                <strong><span class="fi fi-gb"></span> English</strong>,
+                <strong><span class="fi fi-fr"></span> French</strong>,
+                <strong><span class="fi fi-it"></span> Italian</strong>,
+                <strong><span class="fi fi-bg"></span> Bulgarian</strong>, and
+                <strong><span class="fi fi-al"></span> Albanian</strong>.
+              </li>
+              <li>Maintained terminology consistency and cultural accuracy for partner NGOs.</li>
+            </ul>
+          </div>
         </div>
       </div>
-
     </section>
 
     <section id="education">
@@ -467,7 +482,7 @@
   <footer>
     <div class="container footer-content">
       <div>
-        <span class="mono" style="color: var(--accent-red); font-weight: 700;">ENRIK PASHAJ</span> © 2026. All rights
+        <span class="mono" style="color: var(--accent-red); font-weight: 700;">ENRIK PASHAJ</span> © <span id="current-year">2026</span>. All rights
         reserved.
       </div>
       <ul class="footer-links">
@@ -476,6 +491,7 @@
         <li><a href="https://github.com/lille-ricky/" target="_blank">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/ricky-tech-savvy/" target="_blank">LinkedIn</a></li>
         <li><a href="https://www.goodreads.com/user/show/195816372?ref=nav_profile_l" target="_blank">Goodreads</a></li>
+        <li><a href="javascript:void(0)" onclick="openLegalModal()">Legal Notice & Privacy</a></li>
       </ul>
     </div>
   </footer>
@@ -496,7 +512,58 @@
     </div>
   </div>
 
-  <script src="script.js?v=3"></script>
+  <div id="legal-modal" class="legal-modal" onclick="closeLegalModal()">
+    <div class="legal-modal-content" onclick="event.stopPropagation()">
+      <div class="legal-modal-header">
+        <span class="mono" style="color: var(--accent-red); font-weight: 700;">[ COMPLIANCE // LEGAL_NOTICE & PRIVACY
+          ]</span>
+        <button type="button" onclick="closeLegalModal()" class="btn btn-outline"
+          style="padding: 0.35rem 0.85rem; font-size: 0.78rem;">[ ESC / CLOSE ✕ ]</button>
+      </div>
+      <div class="legal-modal-body">
+        <div class="legal-block">
+          <h4>01 // PUBLISHER (FRENCH LCEN)</h4>
+          <p>
+            This website is a non-commercial personal portfolio published by <strong>Enrik Pashaj</strong>, based near
+            Lille, France.<br>
+            Direct contact: <a href="mailto:epashaj19@gmail.com">epashaj19@gmail.com</a>.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h4>02 // HOSTING</h4>
+          <p>
+            Hosted via <strong>GitHub Pages</strong> — GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107,
+            United States.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h4>03 // PRIVACY & COOKIE POLICY (GDPR)</h4>
+          <p>
+            <strong>Zero cookies & zero tracking:</strong> This website uses no advertising cookies, no third-party
+            analytics trackers, and neither collects, stores, nor sells any personal data.
+          </p>
+          <p style="margin-top: 0.5rem;">
+            <strong>External CDNs:</strong> To load typography and flag icons, your browser establishes a standard
+            technical connection with Google Fonts (<code>fonts.googleapis.com</code>) and jsDelivr
+            (<code>cdn.jsdelivr.net</code>), which receive your IP address solely to deliver those static assets.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h4>04 // INTELLECTUAL PROPERTY</h4>
+          <p>
+            The source code and design of this portfolio are protected by copyright (© Enrik Pashaj). Artwork referenced
+            in academic coursework projects (<em>League of Legends</em>, <em>Siam</em>) remains the property of its
+            respective copyright holders and is displayed strictly for educational, non-commercial demonstration.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=4"></script>
 
 </body>
 

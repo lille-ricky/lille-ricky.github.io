@@ -464,7 +464,29 @@ section {
     color: var(--text-muted);
     font-size: 0.92rem;
     line-height: 1.55;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.85rem;
+}
+
+.arch-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid var(--accent-red);
+    padding: 0.55rem 0.75rem;
+    margin-bottom: 1.15rem;
+    line-height: 1.45;
+}
+
+.arch-note strong {
+    font-family: var(--font-mono);
+    color: var(--accent-red);
+    font-size: 0.75rem;
+}
+
+.arch-note code {
+    font-family: var(--font-mono);
+    color: var(--text-main);
+    font-size: 0.75rem;
 }
 
 .card-media {
@@ -613,6 +635,13 @@ section {
     font-family: var(--font-mono);
 }
 
+.timeline-body .fi {
+    margin-right: 0.25rem;
+    border-radius: 1px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+    vertical-align: -1px;
+}
+
 .copy-toast {
     position: fixed;
     bottom: 2rem;
@@ -655,6 +684,7 @@ footer {
 
 .footer-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.25rem;
     list-style: none;
 }
@@ -667,6 +697,78 @@ footer {
 
 .footer-links a:hover {
     color: var(--accent-red);
+}
+
+/* Legal & Privacy Modal */
+.legal-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 5, 6, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2100;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.legal-modal.active {
+    display: flex;
+}
+
+.legal-modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-bright);
+    border-top: 2px solid var(--accent-red);
+    max-width: 680px;
+    width: 100%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
+}
+
+.legal-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 1.5rem;
+    background: #08090a;
+    border-bottom: 1px solid var(--border-dim);
+}
+
+.legal-modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.legal-block h4 {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-red);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.06em;
+}
+
+.legal-block p {
+    line-height: 1.6;
+}
+
+.legal-block a {
+    color: var(--accent-red);
+    text-decoration: none;
+}
+
+.legal-block code {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-main);
 }
 
 @media (max-width: 960px) {
@@ -886,9 +988,20 @@ footer {
     display: block;
 }
 
-.timeline-body .fi {
-    margin-right: 0.25rem;
-    border-radius: 1px;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
-    vertical-align: -1px;
+/* Respect OS Reduced-Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .status-dot {
+        animation: none;
+    }
+
+    .carousel-track,
+    .btn,
+    .tech-card,
+    .card-media img {
+        transition: none;
+    }
 }

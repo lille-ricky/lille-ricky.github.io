@@ -8,6 +8,8 @@ function copyEmail(email) {
   });
 }
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 let posX = Math.floor(Math.random() * 60) + 20;
 let posY = Math.floor(Math.random() * 60) + 20;
 
@@ -18,6 +20,8 @@ const friction = 0.96;
 let lastScrollY = window.scrollY;
 
 function animateMap() {
+  if (prefersReducedMotion) return;
+
   posX += vx;
   posY += vy;
 
@@ -52,7 +56,9 @@ function animateMap() {
   requestAnimationFrame(animateMap);
 }
 
-animateMap();
+if (!prefersReducedMotion) {
+  animateMap();
+}
 
 window.addEventListener('scroll', () => {
   const deltaY = window.scrollY - lastScrollY;
@@ -143,21 +149,31 @@ window.addEventListener('mousemove', (e) => {
     }
   }
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      const maxIndex = Math.max(0, total - getVisibleCount());
-      currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
-      updateCarousel();
-    });
+  function stepPrev() {
+    const maxIndex = Math.max(0, total - getVisibleCount());
+    currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+    updateCarousel();
   }
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      const maxIndex = Math.max(0, total - getVisibleCount());
-      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
-      updateCarousel();
-    });
+  function stepNext() {
+    const maxIndex = Math.max(0, total - getVisibleCount());
+    currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+    updateCarousel();
   }
+
+  if (prevBtn) prevBtn.addEventListener('click', stepPrev);
+  if (nextBtn) nextBtn.addEventListener('click', stepNext);
+
+  window.addEventListener('keydown', (e) => {
+    const gameModal = document.getElementById('game-modal');
+    const legalModal = document.getElementById('legal-modal');
+    const modalOpen = (gameModal && gameModal.classList.contains('active')) ||
+                      (legalModal && legalModal.classList.contains('active'));
+    if (modalOpen) return;
+
+    if (e.key === 'ArrowLeft') stepPrev();
+    if (e.key === 'ArrowRight') stepNext();
+  });
 
   window.addEventListener('resize', updateCarousel);
   updateCarousel();
@@ -209,8 +225,34 @@ function closeGameModal() {
   }
 }
 
+// --- Legal Notice & Privacy Modal ---
+function openLegalModal() {
+  const modal = document.getElementById('legal-modal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeLegalModal() {
+  const modal = document.getElementById('legal-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeGameModal();
+    closeLegalModal();
   }
 });
+
+/**
+ * Changes the current year automatically on the website
+ */
+const yearEl = document.getElementById('current-year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
