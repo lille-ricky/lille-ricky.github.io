@@ -885,3 +885,10 @@ footer {
     border: none;
     display: block;
 }
+
+.timeline-body .fi {
+    margin-right: 0.25rem;
+    border-radius: 1px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+    vertical-align: -1px;
+}
